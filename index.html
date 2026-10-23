@@ -160,6 +160,55 @@
       background: var(--surface);
       border: 1px solid var(--border);
     }
+    /* Nicer key points */
+    .key-points ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .key-points li {
+      position: relative;
+      padding: 0.85rem 0 0.85rem 1.75rem;
+      margin-bottom: 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .key-points li:last-child {
+      border-bottom: none;
+    }
+    .key-points li::before {
+      content: "";
+      position: absolute;
+      left: 0.35rem;
+      top: 1.15rem;
+      width: 0.45rem;
+      height: 0.45rem;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .key-points strong {
+      color: var(--accent);
+    }
+    /* Mitigation list */
+    .mitigation-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .mitigation-box li {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0;
+    }
+    .mitigation-box li:last-child {
+      border-bottom: none;
+    }
+    .mitigation-box a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .mitigation-box a:hover {
+      opacity: 0.8;
+    }
     @media (max-width: 640px) {
       header { flex-direction: column; align-items: flex-start; }
       .controls { width: 100%; justify-content: space-between; }
@@ -234,15 +283,39 @@
       <div class="mitigation-box">
         <p data-en="Several practical steps can meaningfully reduce exposure. None eliminate all risk, but they can lower the particle and chemical load." data-hu="Több gyakorlati lépés érdemben csökkentheti az expozíciót. Egyik sem szünteti meg teljesen a kockázatot, de csökkentheti a részecske- és vegyi terhelést."></p>
         <ul>
-          <li data-en="<strong>Glass bottles (examples):</strong> Glass eliminates the polypropylene body as a microplastic source. Price-competitive options: <a href="https://www.amazon.com/Philips-Avent-Response-SCY913-02/dp/B0DD7ZC68Q" target="_blank">Philips Avent Natural Response Glass</a> (~$12–24), <a href="https://www.mambaby.com/gb/shop/baby-bottles/mam-baby-bottles/mam-feel-good-glass-baby-bottle/" target="_blank">MAM Feel Good Pure Glass</a> (from ~£12), <a href="https://www.amazon.com/Lifefactory-Glass-Baby-Bottle-Blueberry/dp/B071WKSSRK" target="_blank">Lifefactory</a> (sleeve, ~$15–35)." data-hu="<strong>Üveg cumisüvegek (példák):</strong> Az üveg kiküszöböli a polipropilén testet mint mikroműanyag-forrást hő hatására. Árversenyképes opciók: <a href="https://www.mediamarkt.hu/hu/product/_philips-avent-natural-scy933-01-%C3%BCveg-cumis%C3%BCveg-240ml-1408838.html" target="_blank">Philips Avent Natural Response Üveg 240 ml</a> (MediaMarkt, ~5 600 Ft), <a href="https://www.brendon.hu/mam-cumisuvegek-c500004055" target="_blank">MAM Feel Good Üveg</a> (170/260 ml, Brendon, ~4 500–5 400 Ft), <a href="https://www.brendon.hu/nuk-first-choice-glass-240-ml-uveg-cumisuveg-9076001" target="_blank">NUK First Choice Glass</a>."></li>
-          <li data-en="<strong>Latex teats / glass + latex options:</strong> Latex (natural rubber) teats avoid the silicone (PDMS) particle issue documented in Su et al. (2021). Note: latex carries an allergy risk for some infants. Options include <a href="https://us.bibsworld.com/products/bottle-latex-nipple-2-pack" target="_blank">BIBS Latex Bottle Teats (2-pack)</a> (~$7–9, compatible with BIBS bottles including glass), <a href="https://www.amazon.co.uk/BIBS-Glass-Bottle-2-Pack-Latex/dp/B0CP3SHF1W" target="_blank">BIBS Glass Baby Bottle with Latex Teat</a>, and <a href="https://www.amazon.co.uk/NUK-Choice-Bottle-Months-Anti-Colic/dp/B006I5JOV2" target="_blank">NUK First Choice+ Latex Teats</a>." data-hu="<strong>Latex cumifejek / üveg + latex opciók:</strong> A latex (natúrkaucsuk) cumifejek elkerülik a Su et al. (2021) által dokumentált szilikon (PDMS) részecskeproblémát. Figyelem: a latex allergiakockázatot jelenthet egyes csecsemőknél. Opciók: <a href="https://www.pelenka.hu/bibs-lassu-aramlasu-latex-cumifej-cumisuveghez-2-db" target="_blank">BIBS latex cumifej cumisüveghez (2 db)</a> (Pelenka.hu, ~2 900 Ft), <a href="https://bibsworld.com/hu-hu/products/bottle-latex-nipple-2-pack" target="_blank">BIBS Latex Cumisüveg Cumifej</a>, valamint NUK latex etetőcumik."></li>
-          <li data-en="<strong>Silicone teat limitation:</strong> Switching to glass does <em>not</em> solve the silicone teat problem. Most glass bottles still use silicone teats, which release elastomer-derived micro(nano)plastics under steam disinfection (Su et al., 2021). Latex teats are an alternative for some babies, but they have their own considerations (allergy risk, different durability)." data-hu="<strong>A szilikon cumifej korlátja:</strong> Az üvegre váltás <em>nem</em> oldja meg a szilikon cumifej problémáját. A legtöbb üvegüveg továbbra is szilikon cumifejet használ, amely gőzös fertőtlenítés hatására elasztomer-eredetű mikro(nano)műanyagokat szabadít fel (Su et al., 2021). A latex cumifej alternatíva egyes babáknál, de saját megfontolásai vannak (allergia kockázat, eltérő tartósság)."></li>
-          <li data-en="<strong>Prepare formula outside the bottle:</strong> Mix formula in a glass or stainless-steel pitcher with water ≥70 °C, cool to feeding temperature, then pour into the (preferably glass) bottle. This avoids prolonged hot contact with plastic." data-hu="<strong>Tápszerkészítés az üvegen kívül:</strong> Keverjük a tápszert üveg vagy rozsdamentes acél kancsóban ≥70 °C-os vízzel, hűtsük etetési hőmérsékletre, majd töltsük a (lehetőleg üveg) cumisüvegbe. Ez elkerüli a forró folyadék hosszabb érintkezését a műanyaggal."></li>
-          <li data-en="<strong>Reduce high-heat cycles:</strong> Prefer electric steam sterilizers used according to instructions, or boil then rinse thoroughly with cooled boiled water. Limit or avoid the microwave self-sterilizing function of plastic bottles." data-hu="<strong>Csökkentsük a magas hőmérsékletű ciklusokat:</strong> Előnyben részesítsük az elektromos gőzsterilizálókat az utasítások szerint, vagy forralás után alapos öblítést lehűtött forralt vízzel. Korlátozzuk vagy kerüljük a műanyag üvegek mikrohullámú önsterilizáló funkcióját."></li>
-          <li data-en="<strong>Do not microwave formula in plastic.</strong> Never reheat prepared formula or milk directly in a plastic bottle." data-hu="<strong>Ne mikrohullámozzunk tápszert műanyagban.</strong> Soha ne melegítsük újra az elkészített tápszert vagy tejet közvetlenül műanyag cumisüvegben."></li>
-          <li data-en="<strong>Replace regularly:</strong> Change bottles and especially teats when they become scratched, cloudy or deformed. Some research suggests shorter replacement intervals under heavy thermal use." data-hu="<strong>Rendszeres csere:</strong> Cseréljük az üvegeket és különösen a cumifejeket, ha karcosak, zavarosak vagy deformáltak lesznek. Egyes kutatások rövidebb csereintervallumokat javasolnak erős termikus használat esetén."></li>
-          <li data-en="<strong>Breastfeeding when possible:</strong> Direct breastfeeding eliminates bottle-related exposure entirely." data-hu="<strong>Szoptatás, ha lehetséges:</strong> A közvetlen szoptatás teljesen kiküszöböli a cumisüveggel kapcsolatos expozíciót."></li>
-        </ul>
+          <li>
+            <span class="lang-en"><strong>Glass bottles (examples):</strong> Glass eliminates the polypropylene body as a microplastic source under heat. Price-competitive options: <a href="https://www.amazon.com/Philips-Avent-Response-SCY913-02/dp/B0DD7ZC68Q" target="_blank" rel="noopener">Philips Avent Natural Response Glass</a> (~$12–24), <a href="https://www.mambaby.com/gb/shop/baby-bottles/mam-baby-bottles/mam-feel-good-glass-baby-bottle/" target="_blank" rel="noopener">MAM Feel Good Pure Glass</a> (from ~£12), <a href="https://www.amazon.com/Lifefactory-Glass-Baby-Bottle-Blueberry/dp/B071WKSSRK" target="_blank" rel="noopener">Lifefactory</a> (sleeve, ~$15–35).</span>
+            <span class="lang-hu" hidden><strong>Üveg cumisüvegek (példák):</strong> Az üveg kiküszöböli a polipropilén testet mint mikroműanyag-forrást hő hatására. Árversenyképes opciók: <a href="https://www.mediamarkt.hu/hu/product/_philips-avent-natural-scy933-01-%C3%BCveg-cumis%C3%BCveg-240ml-1408838.html" target="_blank" rel="noopener">Philips Avent Natural Response Üveg 240 ml</a> (MediaMarkt, ~5 600 Ft), <a href="https://www.brendon.hu/mam-cumisuvegek-c500004055" target="_blank" rel="noopener">MAM Feel Good Üveg</a> (170/260 ml, Brendon, ~4 500–5 400 Ft), <a href="https://www.brendon.hu/nuk-first-choice-glass-240-ml-uveg-cumisuveg-9076001" target="_blank" rel="noopener">NUK First Choice Glass</a>.</span>
+          </li>
+          <li>
+            <span class="lang-en"><strong>Latex teats / glass + latex options:</strong> Latex (natural rubber) teats avoid the silicone (PDMS) particle issue documented in Su et al. (2021). Note: latex carries an allergy risk for some infants. Options include <a href="https://us.bibsworld.com/products/bottle-latex-nipple-2-pack" target="_blank" rel="noopener">BIBS Latex Bottle Teats (2-pack)</a> (~$7–9, compatible with BIBS bottles including glass), <a href="https://www.amazon.co.uk/BIBS-Glass-Bottle-2-Pack-Latex/dp/B0CP3SHF1W" target="_blank" rel="noopener">BIBS Glass Baby Bottle with Latex Teat</a>, and <a href="https://www.amazon.co.uk/NUK-Choice-Bottle-Months-Anti-Colic/dp/B006I5JOV2" target="_blank" rel="noopener">NUK First Choice+ Latex Teats</a>.</span>
+            <span class="lang-hu" hidden><strong>Latex cumifejek / üveg + latex opciók:</strong> A latex (natúrkaucsuk) cumifejek elkerülik a Su et al. (2021) által dokumentált szilikon (PDMS) részecskeproblémát. Figyelem: a latex allergiakockázatot jelenthet egyes csecsemőknél. Opciók: <a href="https://www.pelenka.hu/bibs-lassu-aramlasu-latex-cumifej-cumisuveghez-2-db" target="_blank" rel="noopener">BIBS latex cumifej cumisüveghez (2 db)</a> (Pelenka.hu, ~2 900 Ft), <a href="https://bibsworld.com/hu-hu/products/bottle-latex-nipple-2-pack" target="_blank" rel="noopener">BIBS Latex Cumisüveg Cumifej</a>, valamint NUK latex etetőcumik.</span>
+          </li>
+          <li>
+            <span class="lang-en"><strong>Silicone teat limitation:</strong> Switching to glass does <em>not</em> solve the silicone teat problem. Most glass bottles still use silicone teats, which release elastomer-derived micro(nano)plastics under steam disinfection (Su et al., 2021). Latex teats are an alternative for some babies, but they have their own considerations (allergy risk, different durability).</span>
+            <span class="lang-hu" hidden><strong>A szilikon cumifej korlátja:</strong> Az üvegre váltás <em>nem</em> oldja meg a szilikon cumifej problémáját. A legtöbb üvegüveg továbbra is szilikon cumifejet használ, amely gőzös fertőtlenítés hatására elasztomer-eredetű mikro(nano)műanyagokat szabadít fel (Su et al., 2021). A latex cumifej alternatíva egyes babáknál, de saját megfontolásai vannak (allergia kockázat, eltérő tartósság).</span>
+          </li>
+          <li>
+            <span class="lang-en"><strong>Prepare formula outside the bottle:</strong> Mix formula in a glass or stainless-steel pitcher with water ≥70 °C, cool to feeding temperature, then pour into the (preferably glass) bottle. This avoids prolonged hot contact with plastic.</span>
+            <span class="lang-hu" hidden><strong>Tápszerkészítés az üvegen kívül:</strong> Keverjük a tápszert üveg vagy rozsdamentes acél kancsóban ≥70 °C-os vízzel, hűtsük etetési hőmérsékletre, majd töltsük a (lehetőleg üveg) cumisüvegbe. Ez elkerüli a forró folyadék hosszabb érintkezését a műanyaggal.</span>
+          </li>
+          <li>
+            <span class="lang-en"><strong>Reduce high-heat cycles:</strong> Prefer electric steam sterilizers used according to instructions, or boil then rinse thoroughly with cooled boiled water. Limit or avoid the microwave self-sterilizing function of plastic bottles.</span>
+            <span class="lang-hu" hidden><strong>Csökkentsük a magas hőmérsékletű ciklusokat:</strong> Előnyben részesítsük az elektromos gőzsterilizálókat az utasítások szerint, vagy forralás után alapos öblítést lehűtött forralt vízzel. Korlátozzuk vagy kerüljük a műanyag üvegek mikrohullámú önsterilizáló funkcióját.</span>
+          </li>
+          <li>
+            <span class="lang-en"><strong>Do not microwave formula in plastic.</strong> Never reheat prepared formula or milk directly in a plastic bottle.</span>
+            <span class="lang-hu" hidden><strong>Ne mikrohullámozzunk tápszert műanyagban.</strong> Soha ne melegítsük újra az elkészített tápszert vagy tejet közvetlenül műanyag cumisüvegben.</span>
+          </li>
+          <li>
+            <span class="lang-en"><strong>Replace regularly:</strong> Change bottles and especially teats when they become scratched, cloudy or deformed. Some research suggests shorter replacement intervals under heavy thermal use.</span>
+            <span class="lang-hu" hidden><strong>Rendszeres csere:</strong> Cseréljük az üvegeket és különösen a cumifejeket, ha karcosak, zavarosak vagy deformáltak lesznek. Egyes kutatások rövidebb csereintervallumokat javasolnak erős termikus használat esetén.</span>
+          </li>
+          <li>
+            <span class="lang-en"><strong>Breastfeeding when possible:</strong> Direct breastfeeding eliminates bottle-related exposure entirely.</span>
+            <span class="lang-hu" hidden><strong>Szoptatás, ha lehetséges:</strong> A közvetlen szoptatás teljesen kiküszöböli a cumisüveggel kapcsolatos expozíciót.</span>
+          </li>
+</ul>
       </div>
     </section>
 
@@ -262,9 +335,14 @@
   <script>
     function setLanguage(lang) {
       document.documentElement.lang = lang;
+      // Attribute-based elements
       document.querySelectorAll('[data-en]').forEach(el => {
         const text = el.getAttribute(lang === 'hu' ? 'data-hu' : 'data-en');
         if (text) el.innerHTML = text;
+      });
+      // Span-based dual language (safer for complex HTML)
+      document.querySelectorAll('.lang-en, .lang-hu').forEach(el => {
+        el.hidden = !el.classList.contains('lang-' + lang);
       });
       document.getElementById('lang-en').classList.toggle('active', lang === 'en');
       document.getElementById('lang-hu').classList.toggle('active', lang === 'hu');
