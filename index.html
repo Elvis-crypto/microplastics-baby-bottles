@@ -1,1 +1,308 @@
-PLACEHOLDER_FOR_FULL_HTML_WITH_FAVICON_LINK
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microplastics in Baby Bottles</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8f7f4;
+      --surface: #ffffff;
+      --text: #1c1917;
+      --text-muted: #57534e;
+      --accent: #0f766e;
+      --accent-soft: #ccfbf1;
+      --border: #e7e5e4;
+      --shadow: 0 4px 24px rgba(0,0,0,.06);
+      --header-bg: rgba(248,247,244,.85);
+    }
+    [data-theme="dark"] {
+      --bg: #0c0a09;
+      --surface: #1c1917;
+      --text: #fafaf9;
+      --text-muted: #a8a29e;
+      --accent: #5eead4;
+      --accent-soft: #134e4a;
+      --border: #292524;
+      --shadow: 0 4px 24px rgba(0,0,0,.3);
+      --header-bg: rgba(12,10,9,.9);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system_ui, sans-serif;
+      color: var(--text);
+      line-height: 1.65;
+      transition: background .3s, color .3s;
+      background-image: linear-gradient(rgba(248,247,244,0.88), rgba(248,247,244,0.92)), url("https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1920&q=80");
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+    [data-theme="dark"] body {
+      background-image: linear-gradient(rgba(12,10,9,0.85), rgba(12,10,9,0.9)), url("https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1920&q=80");
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      padding: .75rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .brand {
+      font-family: 'Source Serif 4', serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -.02em;
+    }
+    .controls {
+      display: flex;
+      gap: .5rem;
+      align-items: center;
+    }
+    button {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 999px;
+      padding: .45rem .9rem;
+      font-size: .85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    button:hover { border-color: var(--accent); color: var(--accent); }
+    button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    [data-theme="dark"] button.active { color: #0c0a09; }
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+    h1 {
+      font-family: 'Source Serif 4', serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 1rem;
+      letter-spacing: -.02em;
+    }
+    .lead {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+    .key-points {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 2.5rem;
+    }
+    .key-points h2 {
+      font-family: 'Source Serif 4', serif;
+      margin: 0 0 1rem;
+      font-size: 1.35rem;
+    }
+    .key-points ul, section ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+    .key-points li, section li {
+      margin-bottom: .75rem;
+    }
+    section {
+      margin-bottom: 2.5rem;
+    }
+    h2 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.5rem;
+      margin: 2rem 0 .75rem;
+      border-bottom: 2px solid var(--accent-soft);
+      padding-bottom: .3rem;
+    }
+    h3 {
+      font-size: 1.1rem;
+      margin: 1.5rem 0 .5rem;
+      color: var(--accent);
+    }
+    p { margin: .75rem 0; }
+    .ref {
+      font-size: .9rem;
+      color: var(--text-muted);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-muted);
+      font-size: .85rem;
+      border-top: 1px solid var(--border);
+    }
+    .product-box, .mitigation-box {
+      background: var(--accent-soft);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .mitigation-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+    @media (max-width: 640px) {
+      header { flex-direction: column; align-items: flex-start; }
+      .controls { width: 100%; justify-content: space-between; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand" data-en="Microplastics & Baby Bottles" data-hu="Mikroműanyagok & Cumisüvegek">Microplastics & Baby Bottles</div>
+    <div class="controls">
+      <button id="lang-en" class="active">EN</button>
+      <button id="lang-hu">HU</button>
+      <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </div>
+  </header>
+
+  <main>
+    <h1 data-en="Microplastics and Harmful Chemicals from Plastics Under Heat, Steam & Microwaving" data-hu="Mikroműanyagok és káros vegyi anyagok műanyagokból hő, gőz és mikrohullám hatására">
+      Microplastics and Harmful Chemicals from Plastics Under Heat, Steam & Microwaving
+    </h1>
+    <p class="lead" data-en="A scientifically sourced overview with special focus on infant feeding bottles, including the MAM Anti-Colic Matt 160 ml." data-hu="Tudományos forrásokon alapuló áttekintés, különös tekintettel a csecsemőtápszeres üvegekre, beleértve a MAM Anti-Colic Matt 160 ml-t.">
+      A scientifically sourced overview with special focus on infant feeding bottles, including the MAM Anti-Colic Matt 160 ml.
+    </p>
+
+    <div class="key-points">
+      <h2 data-en="Key Points" data-hu="Kulcspontok">Key Points</h2>
+      <ul>
+        <li data-en="<strong>Heat, steam and microwaving markedly increase micro- and nanoplastic release</strong> from polypropylene (PP) bottles and silicone teats. A 2020 <em>Nature Food</em> study found PP infant bottles release up to <strong>16.2 million particles/L</strong> at 70 °C and up to <strong>55 million/L</strong> at 95 °C. Infants may ingest 1.5–4.5 million particles/day." data-hu="<strong>A hő, gőz és mikrohullámú kezelés jelentősen növeli a mikro- és nanoműanyagok felszabadulását</strong> a polipropilén (PP) cumisüvegekből és a szilikon cumifejekből. Egy 2020-as <em>Nature Food</em> tanulmány szerint a PP üvegek akár <strong>16,2 millió részecskét/l</strong> szabadítanak fel 70 °C-on, és akár <strong>55 milliót/l</strong>-t 95 °C-on. A csecsemők 1,5–4,5 millió részecskét/nap nyelhetnek le."></li>
+        <li data-en="<strong>Silicone teats</strong> degrade under steam disinfection. A 2021 <em>Nature Nanotechnology</em> study estimated infants could ingest <strong>&gt;0.66 million</strong> elastomer-derived particles by age 1." data-hu="<strong>A szilikon cumifejek</strong> gőzös fertőtlenítés hatására lebomlanak. Egy 2021-es <em>Nature Nanotechnology</em> tanulmány szerint egy csecsemő egyéves koráig <strong>&gt;0,66 millió</strong> elasztomer-eredetű részecskét nyelhet le."></li>
+        <li data-en="<strong>Microwaving</strong> PP containers can release <strong>billions of nanoplastics</strong> per cm² in 3 minutes; extracted particles reduced cultured kidney cell viability by up to ~75 % in vitro." data-hu="<strong>A mikrohullámú melegítés</strong> PP tárolókból 3 perc alatt <strong>milliárdnyi nanoműanyagot</strong> szabadíthat fel cm²-enként; a részecskék in vitro akár ~75 %-kal csökkentették a vesesejtek életképességét."></li>
+        <li data-en="Chemical leaching of additives increases with temperature and microwave exposure, even in BPA-free products." data-hu="Az adalékanyagok kioldódása a hőmérséklet és a mikrohullám hatására nő, még BPA-mentes termékekben is."></li>
+        <li data-en="Infants are especially vulnerable due to higher relative intake, immature barriers, and critical developmental windows." data-hu="A csecsemők különösen sérülékenyek a magasabb relatív bevitel, az éretlen gátak és a kritikus fejlődési ablakok miatt."></li>
+        <li data-en="<strong>For the MAM Anti-Colic Matt 160 ml</strong> (PP body + silicone teat + microwave self-sterilization): the same mechanisms apply. Frequent high-heat cycles are expected to increase particle release." data-hu="<strong>A MAM Anti-Colic Matt 160 ml</strong> (PP test + szilikon cumifej + mikrohullámú önsterilizálás) esetén ugyanazok a mechanizmusok érvényesek. A gyakori magas hőmérsékletű ciklusok várhatóan növelik a részecskekibocsátást."></li>
+      </ul>
+    </div>
+
+    <section>
+      <h2 data-en="1. Introduction" data-hu="1. Bevezetés">1. Introduction</h2>
+      <p data-en="Plastics used in infant feeding bottles are routinely exposed to elevated temperatures during sterilization, formula preparation and warming. These conditions accelerate polymer degradation and generate microplastics (MPs) and nanoplastics (NPs), while also increasing migration of additives and non-intentionally added substances." data-hu="A csecsemőtápszeres üvegekben használt műanyagok rendszeresen magas hőmérsékletnek vannak kitéve sterilizálás, tápszerkészítés és melegítés során. Ezek a körülmények felgyorsítják a polimer lebomlását, és mikroműanyagokat (MP) valamint nanoműanyagokat (NP) generálnak, miközben növelik az adalékok és a nem szándékosan hozzáadott anyagok migrációját."></p>
+    </section>
+
+    <section>
+      <h2 data-en="2. Particle Release under Heat, Steam and Microwave" data-hu="2. Részecskekibocsátás hő, gőz és mikrohullám alatt">2. Particle Release under Heat, Steam and Microwave</h2>
+      <h3 data-en="Polypropylene Bottles" data-hu="Polipropilén üvegek">Polypropylene Bottles</h3>
+      <p data-en="Li et al. (2020, <em>Nature Food</em>) showed commercial PP infant bottles release 1.3–16.2 million particles per litre under standard formula preparation. At 95 °C the figure reached ~55 million/L. Global estimates place infant exposure between 14,600 and 4.55 million particles per day depending on region." data-hu="Li és munkatársai (2020, <em>Nature Food</em>) kimutatták, hogy a kereskedelmi PP csecsemőtápszeres üvegek 1,3–16,2 millió részecskét szabadítanak fel literenként standard tápszerkészítés során. 95 °C-on ez ~55 millió/l-re nőtt. A globális becslések szerint a csecsemők expozíciója régiótól függően 14 600 és 4,55 millió részecske/nap között van."></p>
+      <h3 data-en="Silicone Teats" data-hu="Szilikon cumifejek">Silicone Teats</h3>
+      <p data-en="Su et al. (2021, <em>Nature Nanotechnology</em>) used advanced microscopy to show steam disinfection (100 °C) etches silicone-rubber teats and releases flake- and oil-film-shaped micro(nano)plastics from PDMS elastomer and additives. An infant could ingest more than 0.66 million such particles by age one." data-hu="Su és munkatársai (2021, <em>Nature Nanotechnology</em>) fejlett mikroszkópiával mutatták ki, hogy a gőzös fertőtlenítés (100 °C) maratja a szilikon-gumi cumifejeket, és pelyhes, olajfilmszerű mikro(nano)műanyagokat szabadít fel a PDMS elasztomerből és adalékokból. Egy csecsemő egyéves koráig több mint 0,66 millió ilyen részecskét nyelhet le."></p>
+      <h3 data-en="Microwave Heating" data-hu="Mikrohullámú melegítés">Microwave Heating</h3>
+      <p data-en="Hussain et al. (2023) found that microwaving polypropylene baby-food containers for three minutes can release millions of microplastics and billions of nanoplastics per square centimetre — far more than room-temperature storage. The particles reduced viability of cultured embryonic kidney cells by up to about 75 %." data-hu="Hussain és munkatársai (2023) megállapították, hogy a polipropilén bébiétel-tárolók háromperces mikrohullámozása milliónyi mikroműanyagot és milliárdnyi nanoműanyagot szabadíthat fel négyzetcentiméterenként — sokkal többet, mint a szobahőmérsékletű tárolás. A részecskék akár körülbelül 75 %-kal csökkentették a tenyésztett embrionális vesesejtek életképességét."></p>
+    </section>
+
+    <section>
+      <h2 data-en="3. Chemical Migration" data-hu="3. Vegyi anyagok migrációja">3. Chemical Migration</h2>
+      <p data-en="Heat, steam and microwave exposure accelerate leaching of residual monomers, additives and non-intentionally added substances. Even many “BPA-free” plastics release chemicals with measurable estrogenic activity under real-use stresses such as boiling or microwaving. Authorised substances usually stay below legal limits, but unidentified compounds can appear." data-hu="A hő, gőz és mikrohullám felgyorsítja a maradék monomerek, adalékok és nem szándékosan hozzáadott anyagok kioldódását. Sok „BPA-mentes” műanyag is mérhető ösztrogénaktivitású vegyi anyagokat szabadít fel valós használati körülmények között (forralás, mikrohullám). Az engedélyezett anyagok általában a jogszabályi határértékek alatt maradnak, de azonosítatlan vegyületek is megjelenhetnek."></p>
+    </section>
+
+    <section>
+      <h2 data-en="4. Relevance for Infants" data-hu="4. Vonatkozás csecsemőkre">4. Relevance for Infants</h2>
+      <p data-en="Infants have higher intake relative to body weight, immature gut barriers and detoxification systems, and critical developmental windows. Micro- and nanoplastics have been detected in placenta, cord blood, breast milk and infant stool. Proposed effects (mainly from animal and cell studies) include oxidative stress, inflammation, microbiome disruption and possible endocrine interference. Long-term human causal evidence remains limited." data-hu="A csecsemőknek magasabb a testtömegre vetített bevitelük, éretlen bélgátjuk és méregtelenítő rendszerük van, valamint kritikus fejlődési ablakokkal rendelkeznek. Mikro- és nanoműanyagokat mutattak ki a placentában, köldökvérben, anyatejben és csecsemőszékletben. A javasolt hatások (főként állat- és sejtvizsgálatokból) közé tartozik az oxidatív stressz, a gyulladás, a mikrobiomzavar és a lehetséges endokrin interferencia. A hosszú távú emberi ok-okozati bizonyítékok még korlátozottak."></p>
+    </section>
+
+    <section>
+      <h2 data-en="5. The MAM Anti-Colic Matt 160 ml Bottle" data-hu="5. A MAM Anti-Colic Matt 160 ml cumisüveg">5. The MAM Anti-Colic Matt 160 ml Bottle</h2>
+      <div class="product-box">
+        <p data-en="<strong>Materials:</strong> Polypropylene (bio-circular PP) body, collar and base; silicone teat and valve. BPA- and BPS-free. Self-sterilizing in the microwave (20 ml water in the base, 3 min at 500–1000 W)." data-hu="<strong>Anyagok:</strong> Polipropilén (bio-körforgásos PP) test, gallér és alap; szilikon cumifej és szelep. BPA- és BPS-mentes. Österilizálható mikrohullámban (20 ml víz az alapban, 3 perc 500–1000 W-on)."></p>
+        <p data-en="The bottle body is the same polymer shown to release large numbers of microplastics under 70–95 °C water or sterilization. The silicone teat is subject to the hydrothermal degradation documented for steam disinfection. The marketed microwave self-sterilizing function is a repeated high-temperature moist-heat cycle — conditions associated with the highest particle releases in laboratory studies." data-hu="Az üveg teste ugyanaz a polimer, amelyről kimutatták, hogy nagy mennyiségű mikroműanyagot szabadít fel 70–95 °C-os vízzel vagy sterilizálással. A szilikon cumifej a gőzös fertőtlenítésnél dokumentált hidrotermális lebomlásnak van kitéve. A piacra dobott mikrohullámú önsterilizáló funkció egy ismételt magas hőmérsékletű nedves hő ciklus — olyan körülmények, amelyek a laboratóriumi vizsgálatokban a legmagasabb részecskekibocsátással jártak együtt."></p>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-en="6. Mitigation Possibilities" data-hu="6. Enyhítési lehetőségek">6. Mitigation Possibilities</h2>
+      <div class="mitigation-box">
+        <p data-en="Several practical steps can meaningfully reduce exposure. None eliminate all risk, but they can lower the particle and chemical load." data-hu="Több gyakorlati lépés érdemben csökkentheti az expozíciót. Egyik sem szünteti meg teljesen a kockázatot, de csökkentheti a részecske- és vegyi terhelést."></p>
+        <ul>
+          <li data-en="<strong>Glass bottles (examples):</strong> Glass eliminates the polypropylene body as a microplastic source. Price-competitive options: <a href=&quot;https://www.amazon.com/Philips-Avent-Response-SCY913-02/dp/B0DD7ZC68Q&quot; target=&quot;_blank&quot;>Philips Avent Natural Response Glass</a> (~$12–24), <a href=&quot;https://www.mambaby.com/gb/shop/baby-bottles/mam-baby-bottles/mam-feel-good-glass-baby-bottle/&quot; target=&quot;_blank&quot;>MAM Feel Good Pure Glass</a> (from ~£12), <a href=&quot;https://www.amazon.com/Lifefactory-Glass-Baby-Bottle-Blueberry/dp/B071WKSSRK&quot; target=&quot;_blank&quot;>Lifefactory</a> (sleeve, ~$15–35)." data-hu="<strong>Üveg cumisüvegek (példák):</strong> Az üveg kiküszöböli a polipropilén testet mint mikroműanyag-forrást hő hatására. Árversenyképes opciók: <a href=&quot;https://www.mediamarkt.hu/hu/product/_philips-avent-natural-scy933-01-%C3%BCveg-cumis%C3%BCveg-240ml-1408838.html&quot; target=&quot;_blank&quot;>Philips Avent Natural Response Üveg 240 ml</a> (MediaMarkt, ~5 600 Ft), <a href=&quot;https://www.brendon.hu/mam-cumisuvegek-c500004055&quot; target=&quot;_blank&quot;>MAM Feel Good Üveg</a> (170/260 ml, Brendon, ~4 500–5 400 Ft), <a href=&quot;https://www.brendon.hu/nuk-first-choice-glass-240-ml-uveg-cumisuveg-9076001&quot; target=&quot;_blank&quot;>NUK First Choice Glass</a>."></li>
+          <li data-en="<strong>Silicone teat limitation:</strong> Switching to glass does <em>not</em> solve the silicone teat problem. Most glass bottles still use silicone teats, which release elastomer-derived micro(nano)plastics under steam disinfection (Su et al., 2021). Latex teats are an alternative for some babies, but they have their own considerations (allergy risk, different durability)." data-hu="<strong>A szilikon cumifej korlátja:</strong> Az üvegre váltás <em>nem</em> oldja meg a szilikon cumifej problémáját. A legtöbb üvegüveg továbbra is szilikon cumifejet használ, amely gőzös fertőtlenítés hatására elasztomer-eredetű mikro(nano)műanyagokat szabadít fel (Su et al., 2021). A latex cumifej alternatíva egyes babáknál, de saját megfontolásai vannak (allergia kockázat, eltérő tartósság)."></li>
+          <li data-en="<strong>Prepare formula outside the bottle:</strong> Mix formula in a glass or stainless-steel pitcher with water ≥70 °C, cool to feeding temperature, then pour into the (preferably glass) bottle. This avoids prolonged hot contact with plastic." data-hu="<strong>Tápszerkészítés az üvegen kívül:</strong> Keverjük a tápszert üveg vagy rozsdamentes acél kancsóban ≥70 °C-os vízzel, hűtsük etetési hőmérsékletre, majd töltsük a (lehetőleg üveg) cumisüvegbe. Ez elkerüli a forró folyadék hosszabb érintkezését a műanyaggal."></li>
+          <li data-en="<strong>Reduce high-heat cycles:</strong> Prefer electric steam sterilizers used according to instructions, or boil then rinse thoroughly with cooled boiled water. Limit or avoid the microwave self-sterilizing function of plastic bottles." data-hu="<strong>Csökkentsük a magas hőmérsékletű ciklusokat:</strong> Előnyben részesítsük az elektromos gőzsterilizálókat az utasítások szerint, vagy forralás után alapos öblítést lehűtött forralt vízzel. Korlátozzuk vagy kerüljük a műanyag üvegek mikrohullámú önsterilizáló funkcióját."></li>
+          <li data-en="<strong>Do not microwave formula in plastic.</strong> Never reheat prepared formula or milk directly in a plastic bottle." data-hu="<strong>Ne mikrohullámozzunk tápszert műanyagban.</strong> Soha ne melegítsük újra az elkészített tápszert vagy tejet közvetlenül műanyag cumisüvegben."></li>
+          <li data-en="<strong>Replace regularly:</strong> Change bottles and especially teats when they become scratched, cloudy or deformed. Some research suggests shorter replacement intervals under heavy thermal use." data-hu="<strong>Rendszeres csere:</strong> Cseréljük az üvegeket és különösen a cumifejeket, ha karcosak, zavarosak vagy deformáltak lesznek. Egyes kutatások rövidebb csereintervallumokat javasolnak erős termikus használat esetén."></li>
+          <li data-en="<strong>Breastfeeding when possible:</strong> Direct breastfeeding eliminates bottle-related exposure entirely." data-hu="<strong>Szoptatás, ha lehetséges:</strong> A közvetlen szoptatás teljesen kiküszöböli a cumisüveggel kapcsolatos expozíciót."></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-en="References" data-hu="Hivatkozások">References</h2>
+      <p class="ref">Li, D. et al. (2020). <em>Nature Food</em> 1, 746–754. DOI: 10.1038/s43016-020-00171-y</p>
+      <p class="ref">Su, Y. et al. (2021). <em>Nature Nanotechnology</em> 17, 76–85. DOI: 10.1038/s41565-021-00998-x</p>
+      <p class="ref">Hussain, K. A. et al. (2023). <em>Environmental Science & Technology</em>.</p>
+      <p class="ref">Xu, Z. et al. (2023). <em>Environment International</em> 182, 108296.</p>
+    </section>
+  </main>
+
+  <footer>
+    <span data-en="Scientific summary prepared October 2026. Not medical advice." data-hu="Tudományos összefoglaló, 2026 október. Nem orvosi tanács.">Scientific summary prepared October 2026. Not medical advice.</span>
+  </footer>
+
+  <script>
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const text = el.getAttribute(lang === 'hu' ? 'data-hu' : 'data-en');
+        if (text) el.innerHTML = text;
+      });
+      document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+      document.getElementById('lang-hu').classList.toggle('active', lang === 'hu');
+      localStorage.setItem('lang', lang);
+    }
+
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      document.getElementById('theme-toggle').textContent = theme === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('theme', theme);
+    }
+
+    document.getElementById('lang-en').onclick = () => setLanguage('en');
+    document.getElementById('lang-hu').onclick = () => setLanguage('hu');
+    document.getElementById('theme-toggle').onclick = () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    };
+
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang) {
+      setLanguage(savedLang);
+    } else {
+      fetch('https://ipapi.co/json/')
+        .then(r => r.json())
+        .then(data => {
+          const country = (data.country_code || '').toUpperCase();
+          const lang = country === 'HU' ? 'hu' : 'en';
+          setLanguage(lang);
+        })
+        .catch(() => {
+          const browserLang = (navigator.language || 'en').toLowerCase();
+          setLanguage(browserLang.startsWith('hu') ? 'hu' : 'en');
+        });
+    }
+  </script>
+</body>
+</html>
